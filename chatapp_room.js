@@ -16,7 +16,7 @@ firebase.database().ref("/").child(room_name).update({
 purpose:"Adding Room Name"     
 });
 localStorage.setItem("room_name",room_name);
-window.location= "kwitter_page.html";       
+window.location= "chatapp";       
 }
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
      Room_names = childKey;
@@ -32,7 +32,7 @@ getData();
 function redirectToRoomName(Name){
 console.log(Name);
 localStorage.setItem("room_name", Name);
-window.location="kwitter_page.html";    
+window.location="chatapp_page.html";    
 }
 function logout(){
 localStorage.removeItem("user_name");
