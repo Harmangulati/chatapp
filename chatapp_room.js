@@ -16,10 +16,11 @@ firebase.database().ref("/").child(room_name).update({
 purpose:"Adding Room Name"     
 });
 localStorage.setItem("room_name",room_name);
-window.location= "chatapp";       
+window.location= "chatroom.html";       
 }
-function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
-     Room_names = childKey;
+function getData() {firebase.database().ref("/"+Room_names).on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
+  firebase_message_id=childKey;
+  messgae_data=childData
     //Start code
 console.log("Roomname- "+Room_names);
 row= "<div class='room_name'id="+Room_names+" onclick='redirectToRoomName(this.id)'>#"+Room_names+"</div><hr>";

@@ -21,10 +21,10 @@ function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.
 getData();
 function send(){     
 msg = document.getElementById("msg").value;
-firebase.database().ref(room_name).push({
+firebase.database().ref(Room_name).push({
 name: user_name,
 message:msg,
 like:0      
 });
-document.getElementById("msg").value=" ";     
+document.getElementById("msg").value="";     
 }
