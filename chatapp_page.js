@@ -15,6 +15,11 @@ function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.
        firebase_message_id = childKey;
        message_data = childData;
 //Start code
+console.log(firebase_message_id);
+console.log(message_data);
+name= message_data['name'];
+message= message_data['message'];
+like= message_data['like'];
 
 //End code
     } });  }); }
